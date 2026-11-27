@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "./button.css";
+@import "./table.css";
+@import "./form.css";
+/* Base Label Style */
+.base-label {
+  display: block;
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  color: theme("colors.gray.500"); /* text-gray-700 */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+/* Base Error Message Style (for consistent error text) */
+.base-error-message {
+  margin-top: 0.25rem; /* mt-1 */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem; /* text-sm */
+  color: theme("colors.red.600"); /* text-red-600 */
+}
+
+/* Custom icon container for select/multiselect (if not using BaseSelect's internal icon) */
+.custom-select-icon-container {
+  pointer-events: none;
+  position: absolute;
+  right: 0.75rem; /* Matches base-input/select padding */
+  display: flex;
+  align-items: center;
+  /* Adjust top or padding if needed to align with label */
+}
+button{
+    cursor: pointer;
+}
+/* Keep filters aligned as their controls wrap onto a second line. */
+.filter-toolbar {
+  margin-bottom: 1.25rem;
+  row-gap: .75rem;
+}
+.filter-toolbar > div {
+  max-width: 100%;
+}
+.base-button {
+  gap: .5rem;
+  border-radius: .75rem;
+  font-weight: 600;
+}
+.base-table-cell {
+  letter-spacing: .055em;
+}
+.base-table-row-cell {
+  padding-block: .85rem;
+  font-variant-numeric: tabular-nums;
+}
+.summary-cards p {
+  font-variant-numeric: tabular-nums;
+}
+:where(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+button:disabled {
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter-active, .page-leave-active,
+  .modal-enter-active, .modal-leave-active {
+    transition: opacity 160ms ease;
+  }
+  .page-enter-from, .page-leave-to,
+  .modal-enter-from, .modal-leave-to {
+    opacity: 0;
+  }
+  .modal-enter-active > div, .modal-leave-active > div {
+    transition: transform 160ms ease-out;
+  }
+  .modal-enter-from > div, .modal-leave-to > div {
+    transform: translateY(8px) scale(.985);
+  }
+  .login-panel, .header-title, .summary-cards > div {
+    animation: reveal-panel 300ms cubic-bezier(.2,.8,.2,1) backwards;
+  }
+  .summary-cards > div:nth-child(2) { animation-delay: 45ms; }
+  .summary-cards > div:nth-child(3) { animation-delay: 90ms; }
+  button, aside nav a {
+    transition-property: translate, scale, background-color, border-color, box-shadow;
+    transition-duration: 140ms;
+  }
+  button:enabled:active { scale: .97; }
+  @media (hover: hover) {
+    aside nav a:hover { translate: 3px 0; }
+    .base-button:enabled:hover { translate: 0 -1px; }
+  }
+}
+@keyframes reveal-panel {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

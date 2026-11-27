@@ -1,0 +1,9 @@
+.env
+node_modules/
+vendor/
+.nuxt/
+.output/
+.DS_Store
+backend/database/*.sqlite*
+backend/bootstrap/cache/*.php
+backend/storage/logs/*.log
