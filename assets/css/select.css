@@ -1,0 +1,24 @@
+/* Base Select Style (for <select> elements) */
+.base-select {
+  display: block;
+  width: 100%;
+  height: 2.50rem;
+  padding: 0.75rem 2.25rem 0.75rem 0.75rem;
+  /* px-3 py-3, added right padding for custom icon */
+  border: 1px solid theme("colors.gray.300");
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: theme("colors.gray.800");
+  background-color: theme("colors.white");
+  transition: all 150ms ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.base-select:focus {
+  outline: none;
+  border-color: theme("color.blue.600");
+  box-shadow: 0 0 0 1px theme("color.blue.600");
+}

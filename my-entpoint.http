@@ -1,0 +1,65 @@
+POST http://localhost:8000/api/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "supperadmin",
+  "password": "supperadmin@123"
+}
+###
+GET http://localhost:8000/api/expenses
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 12|xjMrRIpvsDOkZMQVaXZYRp1bLpSLYNKeNBttkWKRb5eb6e3a
+###
+DELETE http://localhost:8000/api/expenses/1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 12|xjMrRIpvsDOkZMQVaXZYRp1bLpSLYNKeNBttkWKRb5eb6e3a
+{
+  "description": "Lunch",
+  "amount": 12.50,
+  "category_id": 2,
+  "created_by": "Admin"
+}
+###
+POST http://localhost:8000/api/expenses
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 12|xjMrRIpvsDOkZMQVaXZYRp1bLpSLYNKeNBttkWKRb5eb6e3a
+
+{
+  "description": "Lunch",
+  "amount": 12.50,
+  "category_id": 2,
+  "created_by": "Admin"
+}
+###
+POST http://localhost:8000/api/app/register
+Content-Type: application/json
+Accept: application/json
+
+
+{
+  "first_name": "Vin",
+  "last_name": "Seyla",
+  "email": "vinseyla@example.com",
+  "password": "secret123",
+  "password_confirmation": "secret123",
+  "phone_number": "012345678",
+  "gender": "Male"
+}
+###
+POST http://localhost:8000/api/app/register
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 12|xjMrRIpvsDOkZMQVaXZYRp1bLpSLYNKeNBttkWKRb5eb6e3a
+{
+  "first_name": "Vinseyla",
+  "last_name": "Orn",
+  "email": "vinseyla@example.com",
+  "password": "123456",
+  "phone_number": "0123456789",
+  "gender": "Male",
+  "image": "https://airbrush.com/_next/static/media/img-0-after.f4dfcc43.jpg"
+}

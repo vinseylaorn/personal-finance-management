@@ -1,0 +1,60 @@
+/* Base Input Style (for actual interactive inputs) */
+.base-input {
+  display: flex;
+  width: 100%;
+  height: 2.60rem;
+  padding: 0.75rem 2.25rem 0.75rem 0.75rem;
+  /* px-3 py-3, consistent internal padding */
+  border: 1px solid theme("colors.gray.300");
+  /* border border-gray-300 */
+  border-radius: 0.5rem;
+  /* rounded-lg */
+  font-size: 0.875rem;
+  /* text-sm */
+  line-height: 1.25rem;
+  /* text-sm */
+  color: theme("colors.gray.800");
+  /* text-gray-800 */
+  background-color: theme("colors.white");
+  /* Ensure consistent background */
+  transition: all 150ms ease-in-out;
+  /* Smooth transitions for focus */
+}
+
+.base-input:focus {
+  outline: none;
+  /* Remove default outline */
+  border-color: theme("colors.blue.600");
+  /* focus:border-green-600 */
+  box-shadow: 0 0 0 1px theme("colors.blue.600");
+  /* focus:ring-2 focus:ring-green-600 */
+}
+
+.base-input::placeholder {
+  color: theme("colors.gray.400");
+  /* Consistent placeholder color */
+}
+
+/* Base Display Field Style (for read-only fields on view pages) */
+.base-display-field {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  /* h-11 equivalent for consistency with inputs */
+  padding: 0.75rem 0.75rem;
+  /* px-3 py-3 */
+  border: 1px solid theme("colors.gray.300");
+  /* Consistent border with inputs */
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: theme("colors.gray.700");
+  background-color: theme("colors.gray.100" );
+  box-shadow: none;
+  outline: none;
+}
+
+/* Ensure the p tag inside doesn't introduce extra margin */
+.base-display-field p {
+  margin: 0;
+}

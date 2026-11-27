@@ -1,0 +1,17 @@
+/* Base Table Styles (for table header/cells, if BaseTable component uses them) */
+.base-table-header-row {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: theme("colors.gray.700");
+  text-transform: uppercase;
+  background-color: theme("colors.gray.50");
+}
+
+.base-table-cell {
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+}
+.base-table-row-cell {
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+}
